@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R9EW10BJGW"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-R9EW10BJGW');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PDF to Text Extractor – Extract Text from PDF Free Online</title>
+<meta name="description" content="Free online PDF to text extractor. Extract all text from any PDF instantly — no upload, runs in browser, works offline. Copy or download as .txt file.">
+<link rel="canonical" href="https://nxtcraft.github.io/pdf-text/">
+<meta property="og:title" content="PDF to Text Extractor — Extract Text from PDF Free">
+<meta property="og:description" content="Extract text from any PDF instantly. Runs entirely in your browser. No upload, no signup, no data leaves your device.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nxtcraft.github.io/pdf-text/">
+<link rel="manifest" href="/pdf-text/manifest.json">
+<meta name="theme-color" content="#ef4444">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"PDF to Text Extractor","url":"https://nxtcraft.github.io/pdf-text/","description":"Extract text from PDF files in the browser. No upload needed.","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:#0f0a0a;color:#f5f0f0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh}
+nav{background:#1a0f0f;border-bottom:1px solid #2d1515;height:50px;display:flex;align-items:center;padding:0 1.5rem;gap:1rem}
+.brand{font-weight:800;color:#ef4444}
+.nav-links{margin-left:auto}.nav-links a{color:#6b4444;font-size:.85rem;text-decoration:none}
+main{max-width:860px;margin:0 auto;padding:1.5rem}
+h1{font-size:1.5rem;font-weight:800;margin-bottom:.3rem}
+.sub{color:#94a3b8;font-size:.9rem;margin-bottom:1.5rem}
+.drop-zone{border:2.5px dashed #3d1515;border-radius:16px;background:#1a0f0f;padding:3rem 1.5rem;text-align:center;cursor:pointer;transition:all .2s;margin-bottom:1rem}
+.drop-zone.dragover,.drop-zone:hover{border-color:#ef4444;background:#1f1212}
+.drop-icon{font-size:2.5rem;margin-bottom:.75rem}
+.drop-text{font-size:1rem;font-weight:600;color:#f5f0f0;margin-bottom:.35rem}
+.drop-sub{font-size:.82rem;color:#6b4444}
+.hidden{display:none}
+.progress-wrap{margin-bottom:1rem}
+.progress-bar{height:6px;background:#1a0f0f;border-radius:4px;overflow:hidden}
+.progress-fill{height:100%;background:#ef4444;border-radius:4px;transition:width .3s;width:0%}
+.progress-label{font-size:.8rem;color:#94a3b8;margin-top:.3rem}
+.toolbar{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.75rem;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:.35rem;padding:.45rem .9rem;border-radius:8px;border:none;cursor:pointer;font-size:.85rem;font-weight:600;transition:all .2s}
+.btn-primary{background:#ef4444;color:#fff}
+.btn-primary:hover{background:#dc2626}
+.btn-secondary{background:#1a0f0f;border:1.5px solid #3d1515;color:#f5f0f0}
+.btn-secondary:hover{border-color:#ef4444;color:#ef4444}
+.btn-success{background:#14532d;color:#4ade80}
+.meta-bar{background:#1a0f0f;border:1px solid #2d1515;border-radius:8px;padding:.6rem 1rem;font-size:.82rem;color:#94a3b8;margin-bottom:.75rem;display:flex;gap:1.5rem;flex-wrap:wrap}
+.meta-bar span b{color:#f5f0f0}
+textarea.output{width:100%;min-height:400px;background:#0f0a0a;border:1.5px solid #2d1515;color:#f5f0f0;border-radius:10px;padding:1rem;font-size:.87rem;font-family:monospace;line-height:1.6;resize:vertical;outline:none}
+textarea.output:focus{border-color:#ef4444}
+.pages-nav{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.5rem}
+.page-chip{padding:.25rem .6rem;border-radius:20px;border:1.5px solid #2d1515;cursor:pointer;font-size:.75rem;color:#94a3b8;transition:all .15s}
+.page-chip.active{background:#ef4444;color:#fff;border-color:#ef4444}
+.page-chip:hover{border-color:#ef4444}
+footer{text-align:center;padding:1.5rem;color:#475569;font-size:.78rem;margin-top:2rem;border-top:1px solid #2d1515}
+</style>
+</head>
+<body>
+<nav>
+  <span class="brand">📄 PDF Text</span>
+  <div class="nav-links"><a href="https://nxtcraft.github.io/">All Tools</a></div>
+</nav>
+<main>
+  <h1>PDF to Text Extractor</h1>
+  <p class="sub">Extract all text from any PDF. 100% in-browser — your file never leaves your device. Works offline.</p>
+
+  <div class="drop-zone" id="drop-zone" onclick="document.getElementById('file-input').click()">
+    <div class="drop-icon">📄</div>
+    <div class="drop-text">Drop a PDF here, or click to browse</div>
+    <div class="drop-sub">No upload — processed locally in your browser</div>
+    <input type="file" id="file-input" accept=".pdf,application/pdf" class="hidden">
+  </div>
+
+  <div id="progress-wrap" class="progress-wrap hidden">
+    <div class="progress-bar"><div class="progress-fill" id="prog-fill"></div></div>
+    <div class="progress-label" id="prog-label">Loading PDF...</div>
+  </div>
+
+  <div id="result-wrap" class="hidden">
+    <div class="meta-bar" id="meta-bar"></div>
+    <div class="toolbar">
+      <button class="btn btn-primary" onclick="copyAll()">📋 Copy All Text</button>
+      <button class="btn btn-secondary" onclick="downloadTxt()">⬇ Download .txt</button>
+      <button class="btn btn-secondary" onclick="reset()">📂 New PDF</button>
+      <div id="copy-confirm" style="color:#4ade80;font-size:.82rem;font-weight:600;display:none">✓ Copied!</div>
+    </div>
+    <div class="pages-nav" id="pages-nav"></div>
+    <textarea class="output" id="output" readonly></textarea>
+  </div>
+</main>
+<footer><p>PDF Text Extractor by <a href="https://nxtcraft.github.io/" style="color:#ef4444">NxtCraft</a> · Your files never leave your device.</p></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+let pageTexts = [];
+let fileName = '';
+let currentPage = 0; // 0 = all pages
+
+const dropZone = document.getElementById('drop-zone');
+const fileInput = document.getElementById('file-input');
+
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('dragover'); });
+dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+dropZone.addEventListener('drop', e => { e.preventDefault(); dropZone.classList.remove('dragover'); const f = e.dataTransfer.files[0]; if (f) processPDF(f); });
+fileInput.addEventListener('change', e => { if (e.target.files[0]) processPDF(e.target.files[0]); });
+
+async function processPDF(file) {
+  if (!file.type.includes('pdf') && !file.name.endsWith('.pdf')) { alert('Please select a PDF file.'); return; }
+  fileName = file.name.replace('.pdf','');
+  document.getElementById('drop-zone').classList.add('hidden');
+  document.getElementById('progress-wrap').classList.remove('hidden');
+  document.getElementById('result-wrap').classList.add('hidden');
+  pageTexts = [];
+
+  const arrayBuffer = await file.arrayBuffer();
+  const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+  const total = pdf.numPages;
+
+  setProgress(5, `Loading ${total} pages...`);
+
+  for (let i = 1; i <= total; i++) {
+    const page = await pdf.getPage(i);
+    const content = await page.getTextContent();
+    const text = content.items.map(item => item.str).join(' ').replace(/ {2,}/g,' ').trim();
+    pageTexts.push(text);
+    setProgress(5 + Math.round((i/total)*90), `Extracting page ${i} of ${total}...`);
+  }
+
+  setProgress(100, 'Done!');
+  setTimeout(() => showResult(total, file.size), 400);
+}
+
+function setProgress(pct, label) {
+  document.getElementById('prog-fill').style.width = pct + '%';
+  document.getElementById('prog-label').textContent = label;
+}
+
+function showResult(total, fileSize) {
+  document.getElementById('progress-wrap').classList.add('hidden');
+  document.getElementById('result-wrap').classList.remove('hidden');
+
+  const allText = pageTexts.join('\n\n--- Page Break ---\n\n');
+  const wordCount = allText.split(/\s+/).filter(Boolean).length;
+  const charCount = allText.length;
+
+  document.getElementById('meta-bar').innerHTML =
+    `<span><b>${total}</b> pages</span><span><b>${wordCount.toLocaleString()}</b> words</span><span><b>${charCount.toLocaleString()}</b> characters</span><span><b>${(fileSize/1024).toFixed(1)} KB</b> PDF size</span>`;
+
+  // Page nav
+  const nav = document.getElementById('pages-nav');
+  nav.innerHTML = `<div class="page-chip active" onclick="showPage(0,this)">All Pages</div>` +
+    pageTexts.map((_,i) => `<div class="page-chip" onclick="showPage(${i+1},this)">Page ${i+1}</div>`).join('');
+
+  document.getElementById('output').value = allText;
+}
+
+function showPage(n, el) {
+  currentPage = n;
+  document.querySelectorAll('.page-chip').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');
+  if (n === 0) {
+    document.getElementById('output').value = pageTexts.join('\n\n--- Page Break ---\n\n');
+  } else {
+    document.getElementById('output').value = pageTexts[n-1] || '(No text found on this page)';
+  }
+}
+
+function copyAll() {
+  const text = document.getElementById('output').value;
+  navigator.clipboard.writeText(text).then(()=>{
+    const c = document.getElementById('copy-confirm');
+    c.style.display='inline'; setTimeout(()=>c.style.display='none',2000);
+  });
+}
+
+function downloadTxt() {
+  const text = document.getElementById('output').value;
+  const blob = new Blob([text], { type: 'text/plain' });
+  const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(blob), download: (fileName||'extracted') + '.txt' });
+  a.click(); URL.revokeObjectURL(a.href);
+}
+
+function reset() {
+  pageTexts = []; fileName = '';
+  document.getElementById('drop-zone').classList.remove('hidden');
+  document.getElementById('result-wrap').classList.add('hidden');
+  document.getElementById('progress-wrap').classList.add('hidden');
+  document.getElementById('file-input').value = '';
+}
+</script>
+<script>if('serviceWorker'in navigator)navigator.serviceWorker.register('/pdf-text/sw.js');</script>
+</body>
+</html>
